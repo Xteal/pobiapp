@@ -23,21 +23,27 @@ body {
 }
 header {
 	background:#FFF;
+	position:fixed;
+	width:100%;
+	z-index:3;
 }
 #container {
 	margin:auto;
-	max-height:93.5%;
 	width:100%;
-	overflow-x:hidden;
 	position:absolute;
+	top:60px;
 	z-index:1;
 }
 #pagina {
 	background:rgba(0,0,0,0.5);
 	height:100%;
+	width:100%;
 	position:absolute;
-	top:170px;
 	z-index:2;
+	color:white;
+	display:none;
+	top:60px;
+	padding:10px;
 }
 nav ul, nav ul>li {
 	display:inline;
@@ -63,4 +69,5 @@ nav ul>li>a {
 }
 .back-to-menu {
 	float:left;
+	display:none;
 }
