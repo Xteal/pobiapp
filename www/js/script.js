@@ -2,12 +2,14 @@ $(function() {
 	$(".back-to-menu").on("click", function() {
 		$("#pagina").hide();
 		$(".back-to-menu").hide();
+		$("nav").show();
 	});
 	
-	$("nav li>a").on("click",function() {
-		var id=$(this).attr("id");
-		if(id!="undefined") {
-			cargarPagina($(this).attr("id"));
+	$("nav .open-page").on("click",function(event) {
+		event.preventDefault();
+		var id=$(this).find("a").attr("id");
+		if(id!=undefined) {
+			cargarPagina(id);
 		}
 	});
 });
