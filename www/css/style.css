@@ -19,6 +19,7 @@
 body {
 	font-family:Arial;
 	margin:0px;
+	color:#454546;
 }
 header {
 	background:#FFF;
@@ -35,15 +36,18 @@ header {
 	z-index:1;
 }
 #pagina {
-	background:rgba(0,0,0,0.7);
-	height:100%;
+	min-height:100%;
 	width:100%;
 	position:absolute;
 	z-index:2;
-	color:white;
+	color:#454546;
 	display:none;
 	top:60px;
 	padding:10px;
+}
+#pagina-container {
+	width:90%;
+	margin:auto;
 }
 nav ul, nav ul>li {
 	display:inline;
@@ -81,4 +85,13 @@ nav ul>li>a {
 }
 .back-to-menu i {
 	display:none;
+}
+.curso {
+	margin-left:20px;
+	text-decoration:none!important;
+	text-shadow:none!important;
+	padding:17px;
+	border:1px solid #CECECE;
+	color:#C2D74A!important;
+	font-size:30px;
 }

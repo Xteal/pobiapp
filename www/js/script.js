@@ -1,4 +1,5 @@
 $(function() {
+	$.mobile.loading( "hide" );
 	$(".back-to-menu").on("tap", function() {
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
@@ -14,14 +15,20 @@ $(function() {
 				cargarPagina(id);
 				break;
 			case "open-link":
-				window.open($(this).data("href"));
+				$.mobile.loading("show");
+				window.open($(this).data("href"),function() {
+					$.mobile.loading( "hide" );
+				});
 				break;
 		}
 	});
 });
 
 function cargarPagina(pagina) {
-	$("#pagina").load(pagina+".html");
+	$.mobile.loading("show");
+	$("#pagina-container").load(pagina+".html",function() {
+		$.mobile.loading( "hide" );
+	});
 	$(".back-to-menu i").show();
 	$("nav").hide();
 	$("#pagina").show();

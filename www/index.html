@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"> 
 		<link rel="stylesheet" type="text/css" href="css/fonts.css"> 
 		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css"> 
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css"> 
 		<script language="javascript" src="js/jquery.js"></script>
 		<script language="javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script language="javascript" src="js/script.js"></script>	
@@ -16,14 +17,16 @@
 			<div class="back-to-menu"><i class="icon-undo"></i></div>
 			<div align="center"><img src="img/logo.jpg" style="max-width:170px" /></div>
 		</header>
-		<div id="pagina"></div>
+		<div id="pagina">
+			<div id="pagina-container"></div>
+		</div>
 		<div id="container">
 			<nav>
 				<ul>
 					<li data-accion="open-page" id="bienvenido"><i class="icon-home big"></i><br>Bienvenido</li>
 					<li data-accion="open-page" id="aetcb"><i class="icon-home big"></i><br>A.E.T.C.B</li>
 					<li data-accion="open-page" id="mapa"><i class="icon-map big"></i><br>Mapa</li>
-					<li data-accion="open-link"><i class="icon-bubbles big"></i><br>Contacto</li>
+					<li data-accion="open-link" data-href="mailto:info@asociacioncraneosacral.com"><i class="icon-bubbles big"></i><br>Contacto</li>
 					<li data-accion="open-link" data-href="tel:+34-638-604-948"><i class="icon-phone big"></i><br>Ll&aacute;manos</li>
 					<li data-accion="open-page" id="cursos"><i class="icon-book big"></i><br>Cursos</li>
 					<li data-accion="open-page" id="blog"><i class="icon-pencil big"></i><br>Blog</li>
