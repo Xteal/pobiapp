@@ -1,5 +1,5 @@
 $(function() {
-	$(".back-to-menu i").on("tap", function() {
+	$(".back-to-menu").on("tap", function() {
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
 		$("nav").show();
@@ -9,7 +9,6 @@ $(function() {
 		event.preventDefault();
 		var id= $(this).attr("id");
 		var accion = $(this).data("accion");
-		alert(accion);
 		switch(accion){
 			case "open-page":
 				cargarPagina(id);
