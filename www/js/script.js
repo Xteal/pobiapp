@@ -15,10 +15,7 @@ $(function() {
 				cargarPagina(id);
 				break;
 			case "open-link":
-				$.mobile.loading("show");
-				window.open($(this).data("href"),function() {
-					$.mobile.loading( "hide" );
-				});
+				window.open($(this).data("href"));
 				break;
 		}
 	});
@@ -29,6 +26,7 @@ function cargarPagina(pagina) {
 	$("#pagina-container").load(pagina+".html",function() {
 		$.mobile.loading( "hide" );
 	});
+	window.scrollTo(0,0);
 	$(".back-to-menu i").show();
 	$("nav").hide();
 	$("#pagina").show();
