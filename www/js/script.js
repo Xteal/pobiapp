@@ -22,13 +22,9 @@ $(function() {
 });
 
 function cargarPagina(pagina) {
-	$.mobile.loading("show");
-	$("#pagina-container").load(pagina+".html",function() {
-		$.mobile.loading( "hide" );
-	});
-	window.scrollTo(0,0);
+	$("#pagina-container").load(pagina+".html");
 	$(".back-to-menu i").show();
 	$("nav").hide();
 	$("#pagina").show();
-	
+	window.scrollTo(0,0);
 }
