@@ -44,17 +44,23 @@
 .icon-map:before {
 	content: "\e606";
 }
+.icon-undo:before {
+	content: "\e60c";
+}
 .icon-bubbles:before {
 	content: "\e607";
+}
+.icon-accessibility:before {
+	content: "\e60a";
+}
+.icon-menu:before {
+	content: "\e60d";
 }
 .icon-facebook:before {
 	content: "\e608";
 }
 .icon-youtube:before {
 	content: "\e609";
-}
-.icon-accessibility:before {
-	content: "\e60a";
 }
 .icon-file-pdf:before {
 	content: "\e60b";

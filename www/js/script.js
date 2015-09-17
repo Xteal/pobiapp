@@ -1,7 +1,7 @@
 $(function() {
-	$(".back-to-menu").on("click", function() {
+	$(".back-to-menu i").on("click", function() {
 		$("#pagina").hide();
-		$(".back-to-menu").hide();
+		$(".back-to-menu i").hide();
 		$("nav").show();
 	});
 	
@@ -16,7 +16,7 @@ $(function() {
 
 function cargarPagina(pagina) {
 	$("#pagina").load(pagina+".html");
-	$(".back-to-menu").show();
+	$(".back-to-menu i").show();
 	$("nav").hide();
 	$("#pagina").show();
 	
