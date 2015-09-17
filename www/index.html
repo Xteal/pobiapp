@@ -6,7 +6,9 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"> 
 		<link rel="stylesheet" type="text/css" href="css/fonts.css"> 
 		<script language="javascript" src="js/jquery.js"></script>
-		<script language="javascript" src="js/script.js"></script>
+		<script language="javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script language="javascript" src="js/script.js"></script>	
+		
 	</head>
 	<body>
 		<header>
@@ -17,20 +19,20 @@
 		<div id="container">
 			<nav>
 				<ul>
-					<li class="open-page"><a href="#" id="bienvenido"><i class="icon-home big"></i><br>Bienvenido</a></li>
-					<li class="open-page"><a href="#" id="aetcb"><i class="icon-home big"></i><br>A.E.T.C.B</a></li>
-					<li class="open-page"><a href="#" id="mapa"><i class="icon-map big"></i><br>Mapa</a></li>
-					<li><a href="#" id="contacto"><i class="icon-bubbles big"></i><br>Contacto</a></li>
-					<li><a href="tel:+34-638-604-948"><i class="icon-phone big"></i><br>Ll&aacute;manos</a></li>
-					<li><a href="#"><i class="icon-book big"></i><br>Cursos</a></li>
-					<li class="open-page"><a href="#"><i class="icon-pencil big"></i><br>Blog</a></li>
-					<li class="open-page"><a href="#"><i class="icon-library big"></i><br>Escuelas Reconocidas</a></li>
-					<li class="open-page"><a href="#"><i class="icon-images big"></i><br>Fotos</a></li>
-					<li class="open-page"><a href="#"><i class="icon-youtube big"></i><br>Videos</a></li>
-					<li class="open-page"><a href="#"><i class="icon-facebook big"></i><br>Facebook</a></li>
-					<li class="open-page"><a href="#"><i class="icon-accessibility big"></i><br>Asociarse</a></li>
-					<li><a href="https://docs.google.com/viewer?url=http://s.como.com/mobile/e5/37/e59142b2-f537-40ce-9ebb-c4840a124281/pdf/14ec0e95-245b-4626-bec1-d5338639fe6f.pdf&embedded=true" ><i class="icon-file-pdf big"></i><br>PDF Listado de terapeutas</a></li>
-					<li><a href="https://docs.google.com/viewer?url=http://s.como.com/mobile/e5/37/e59142b2-f537-40ce-9ebb-c4840a124281/pdf/572ae579-c9c1-4986-b2df-0f8eba2239d7.pdf&embedded=true"><i class="icon-file-pdf big"></i><br>PDF Terapeutas sociales</a></li>
+					<li data-accion="open-page" id="bienvenido"><i class="icon-home big"></i><br>Bienvenido</li>
+					<li data-accion="open-page" id="aetcb"><i class="icon-home big"></i><br>A.E.T.C.B</li>
+					<li data-accion="open-page" id="mapa"><i class="icon-map big"></i><br>Mapa</li>
+					<li data-accion="open-link"><i class="icon-bubbles big"></i><br>Contacto</li>
+					<li data-accion="open-link" data-href="tel:+34-638-604-948"><i class="icon-phone big"></i><br>Ll&aacute;manos</li>
+					<li data-accion="open-page" id="cursos"><i class="icon-book big"></i><br>Cursos</li>
+					<li data-accion="open-page" id="blog"><i class="icon-pencil big"></i><br>Blog</li>
+					<li data-accion="open-page" id="escuelas_reconocidas"><i class="icon-library big"></i><br>Escuelas Reconocidas</li>
+					<li data-accion="open-page" id="fotos"><i class="icon-images big"></i><br>Fotos</li>
+					<li data-accion="open-page" id="videos"><i class="icon-youtube big"></i><br>Videos</li>
+					<li data-accion="open-page" id="facebook"><i class="icon-facebook big"></i><br>Facebook</li>
+					<li data-accion="open-page" id="asociarse"><i class="icon-accessibility big"></i><br>Asociarse</li>
+					<li data-accion="open-link" data-href="https://docs.google.com/viewer?url=http://s.como.com/mobile/e5/37/e59142b2-f537-40ce-9ebb-c4840a124281/pdf/14ec0e95-245b-4626-bec1-d5338639fe6f.pdf&embedded=true"><i class="icon-file-pdf big"></i><br>PDF Listado de terapeutas</li>
+					<li data-accion="open-link" data-href="https://docs.google.com/viewer?url=http://s.como.com/mobile/e5/37/e59142b2-f537-40ce-9ebb-c4840a124281/pdf/572ae579-c9c1-4986-b2df-0f8eba2239d7.pdf&embedded=true"><i class="icon-file-pdf big"></i><br>PDF Terapeutas sociales</li>
 				</ul>
 				<div class="clear"></div>		
 			</nav>

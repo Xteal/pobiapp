@@ -1,15 +1,22 @@
 $(function() {
-	$(".back-to-menu i").on("click", function() {
+	$(".back-to-menu i").on("tap", function() {
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
 		$("nav").show();
 	});
 	
-	$("nav .open-page").on("click",function(event) {
+	$("nav li").on("tap",function(event) {
 		event.preventDefault();
-		var id=$(this).find("a").attr("id");
-		if(id!=undefined) {
-			cargarPagina(id);
+		var id= $(this).attr("id");
+		var accion = $(this).data("accion");
+		alert(accion);
+		switch(accion){
+			case "open-page":
+				cargarPagina(id);
+				break;
+			case "open-link":
+				window.open($(this).data("href"));
+				break;
 		}
 	});
 });
