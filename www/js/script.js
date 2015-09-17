@@ -1,6 +1,7 @@
 $(function() {
 	$.mobile.loading( "hide" );
 	$(".back-to-menu").on("tap", function() {
+		window.location.hash = '';
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
 		$("nav").show();
@@ -23,8 +24,9 @@ $(function() {
 
 function cargarPagina(pagina) {
 	$("#pagina-container").load(pagina+".html");
+	window.location.hash = pagina;
 	$(".back-to-menu i").show();
 	$("nav").hide();
 	$("#pagina").show();
-	window.scrollTo(0,0);
+	window.scrollTo(0,62);
 }
