@@ -1,11 +1,16 @@
 $(function() {
 	$.mobile.loading( "hide" );
 	$(".back-to-menu").on("tap", function() {
+		var hashAntiguo = window.location.hash;
+		alert(hashAntiguo);
 		window.location.hash = '';
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
 		$(".button-update i").hide();
 		$("nav").show();
+		$('html, body').animate({
+			scrollTop: $(""+hashAntiguo).offset().top
+		}, 2000);
 	});
 	
 	$("nav li").on("tap",function(event) {
