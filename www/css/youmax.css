@@ -22,7 +22,7 @@
 
 #youmax-video-list-div {width:100%;text-align:left;display: inline-block; padding: 0px 15px; box-sizing: border-box;}
 
-.youmax-video-list-title {color:#438bc5;display: inline-block;padding:2% 10px; padding-bottom: 0px;font-weight:bold;max-width:250px;max-height:20px;overflow:hidden;}
+.youmax-video-list-title {color:#438bc5;display: inline-block;padding:2% 10px; padding-bottom: 0px;font-weight:bold;max-width:250px;max-height:30px;overflow:hidden;}
 
 .youmax-video-list-views {color:#555;padding:1% 10px; padding-bottom: 3%;display:inline-block;font-size:12px;  font-family: Arial;}
 
