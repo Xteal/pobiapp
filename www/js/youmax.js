@@ -181,7 +181,7 @@
 		$('#youmax-video-list-div').empty();
 		$('#youmax-video').hide();
 		$('#youmax-video').attr('src','');
-		$('#youmax-video-list-div').append('<div style="text-align:center; height:200px; font:14px Calibri;"><br><br><br><br><br><br>loading...</div>');
+		$('#youmax-video-list-div').append('<div style="text-align:center; height:200px; font:14px Calibri;"><br><br><br><br><br><br>cargando...</div>');
 	},
 	
 	initFeaturedVideos = function () {
