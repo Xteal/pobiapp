@@ -4,6 +4,7 @@ $(function() {
 		window.location.hash = '';
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
+		$(".button-update i").hide();
 		$("nav").show();
 	});
 	
@@ -28,6 +29,8 @@ function cargarPagina(pagina) {
 	window.location.hash = pagina;
 	$(".back-to-menu i").show();
 	$("#pagina").show();
+	if(pagina=="facebook")
+		$(".button-update i").show();
 	$("html, body").animate({
 		scrollTop:0
 	},"slow");

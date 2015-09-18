@@ -2,7 +2,16 @@
 <link rel="stylesheet" type="text/css" href="css/example.css">
 <link rel="stylesheet" type="text/css" href="css/facebook_feed.css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<div class="social-feed-container"></div>
+<section class="feed">
+	<div class="container">
+		<!--div class="controls">
+			<input type="field" value="#dolomiti" id="query" />
+			<input type="button" value="Update" />
+		</div-->
+		<div class="social-feed-container">
+		</div>
+	</div>
+</section>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Codebird.js - required for TWITTER -->
 <script src="bower_components/codebird-js/codebird.js"></script>
@@ -14,11 +23,12 @@
 <script src="js/jquery.socialfeed.js"></script>
 <script>
     $(document).ready(function(){
-        $('.social-feed-container').socialfeed({
+		var updateFeed = function() {
+            $('.social-feed-container').socialfeed({
                     // FACEBOOK
                     facebook:{
                         accounts: ['@120120798061204','!120120798061204'],
-                        limit: 5,
+                        limit: 7,
                         access_token: '294496207397455|0WhdIzuDnjt8vLh3X9IhM11q1Pk' // APP_ID|APP_SECRET
                     },
                     // GENERAL SETTINGS
@@ -38,5 +48,12 @@
                         console.log('all posts are collected');
                     }
                 });
+        };
+		
+		updateFeed();
+		$('.button-update').click(function() {
+            updateFeed();
         });
+				
+	});
 </script>

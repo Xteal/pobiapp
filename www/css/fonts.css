@@ -65,3 +65,6 @@
 .icon-file-pdf:before {
 	content: "\e60b";
 }
+.icon-spinner:before {
+	content: "\e60e";
+}
