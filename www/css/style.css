@@ -1,3 +1,11 @@
+@media (max-width: 200px){
+	nav ul>li {
+		margin:0.6%;
+		width:48.5%;
+		height:120px;
+		font-size:20px!important;
+	}
+}
 @media (max-width: 300px){
 	nav ul>li {
 		margin:0.6%;

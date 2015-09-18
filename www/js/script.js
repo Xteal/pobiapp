@@ -23,6 +23,17 @@ $(function() {
 	});
 });
 
+function init() {
+	document.addEventListener("deviceready", onDeviceReady, false);
+} 
+function onDeviceReady(){
+	document.addEventListener("backbutton", backKeyDown, true);
+	alert("ey");
+}
+function backKeyDown() { 
+	window.history.back();
+}
+
 function cargarPagina(pagina) {
 	$("nav").hide();
 	$("#pagina-container").load(pagina+".html");
