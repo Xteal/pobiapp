@@ -105,4 +105,4 @@ iframe#youmax-video {
 
 #youmax-header{display:none !important;}
 #youmax-tabs{display:none !important;}
-#youmax{width:100% !important;}
+#youmax{max-width:100% !important;}
