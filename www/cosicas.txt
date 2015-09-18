@@ -1,6 +1,5 @@
 TO DO:
 	- Sección Blog
-	- Sección videos. Todos los "plugins" están desactualizados
 	- Añadir función al botón de atras del movil.
 	
 TO FIX:
