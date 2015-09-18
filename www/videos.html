@@ -1,8 +1,15 @@
-<div id="video-container"></div>
-    <div class="button-container">
-      <button id="prev-button" class="paging-button" onclick="previousPage();">Previous Page</button>
-      <button id="next-button" class="paging-button" onclick="nextPage();">Next Page</button>
-    </div>
-    <script type="text/javascript" src="js/auth.js"></script>
-    <script type="text/javascript" src="js/my_uploads.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+<link rel="stylesheet" type="text/css" href="css/youmax.css" />
+<script type="text/javascript" src="js/youmax.js"></script>
+<script>
+		$('#youmax').youmax({
+            apiKey:'AIzaSyCvcRe4dX3rWAQGhz9TFSoqWNcurrspe0A',
+            youTubeChannelURL:"https://www.youtube.com/channel/UCKEj-arfLJtZRQ40TtQq9kg",
+            youTubePlaylistURL:"http://www.youtube.com/playlist?list=PLHFlHpPjgk713fMv5O4s4Fv7k6yTkXwkV",
+            youmaxDefaultTab:"UPLOADS", //can be UPLOADS or PLAYLISTS or FEATURED
+            youmaxColumns:3,
+            showVideoInLightbox:false,
+            maxResults:15,
+        });
+</script>
+</script>
+<div id="youmax"></div>

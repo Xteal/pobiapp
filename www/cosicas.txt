@@ -5,7 +5,6 @@ TO DO:
 	
 TO FIX:
 	- Arreglar sección Fotos.
-	- Al seleccionar una seccion intermedia (ejemplo: Asociarse), carga la pagina con el scroll en medio, deberia devolver el scroll arriba del todo 
 	
 COSAS DEL DISEÑO
 	- Mejorarlo en general
