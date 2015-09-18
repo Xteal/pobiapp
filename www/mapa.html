@@ -18,9 +18,17 @@ function initMap() {
   });
   var marker = new google.maps.Marker({
     position: myLatLng,
+    animation:google.maps.Animation.DROP,
     map: map,
-    title: 'Asociación Española de Terapia Craneosacral Biodinámica'
+    title: "Asociación Española de Terapia Craneosacral Biodinámica"
   });
+
+  var infowindow = new google.maps.InfoWindow({
+  content:"Asociaci&oacute;n Espa&ntilde;ola de Terapia Craneosacral Biodin&aacute;mica"
+  });
+
+  //Llamada a infowindow
+  infowindow.open(map,marker);
 
 }
 
