@@ -23,10 +23,12 @@ $(function() {
 });
 
 function cargarPagina(pagina) {
+	$("nav").hide();
 	$("#pagina-container").load(pagina+".html");
 	window.location.hash = pagina;
 	$(".back-to-menu i").show();
-	$("nav").hide();
 	$("#pagina").show();
-	window.scrollTo(0,62);
+	$("html, body").animate({
+		scrollTop:0
+	},"slow");
 }
