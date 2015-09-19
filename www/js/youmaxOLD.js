@@ -2,7 +2,7 @@
 	var youmax_global_options = {};
 
 	
-(function (jq) {
+(function ($) {
 
 
 	var secondsToTime = function(duration) {
@@ -111,22 +111,22 @@
 		
 	loadYoumax = function() {	
 
-		youmaxWidgetWidth = jq('#youmax').width();
+		youmaxWidgetWidth = $('#youmax').width();
 		
-		jq('#youmax').append('<div id="youmax-header"><div id="youmax-stat-holder"></div></div>');
+		$('#youmax').append('<div id="youmax-header"><div id="youmax-stat-holder"></div></div>');
 
-		//jq('#youmax').append('<div id="youmax-tabs"></div>');
+		//$('#youmax').append('<div id="youmax-tabs"></div>');
 		
-		jq('#youmax').append('<div id="youmax-tabs"><span id="featured_" class="youmax-tab">Featured</span><span id="uploads_" class="youmax-tab">Uploads</span><span id="playlists_" class="youmax-tab">Playlists</span></div>');
+		$('#youmax').append('<div id="youmax-tabs"><span id="featured_" class="youmax-tab">Featured</span><span id="uploads_" class="youmax-tab">Uploads</span><span id="playlists_" class="youmax-tab">Playlists</span></div>');
 
 		
-		jq('#youmax').append('<div id="youmax-encloser"><iframe id="youmax-video" width="'+(youmaxWidgetWidth-2)+'" height="'+(youmaxWidgetWidth/youmax_global_options.youtubeVideoAspectRatio)+'" src="" frameborder="0" allowfullscreen></iframe><div id="youmax-video-list-div"></div><div id="youmax-load-more-div">VER MÁS</div></div>');
+		$('#youmax').append('<div id="youmax-encloser"><iframe id="youmax-video" width="'+(youmaxWidgetWidth-2)+'" height="'+(youmaxWidgetWidth/youmax_global_options.youtubeVideoAspectRatio)+'" src="" frameborder="0" allowfullscreen></iframe><div id="youmax-video-list-div"></div><div id="youmax-load-more-div">VER MÁS</div></div>');
 		
-		jq('#youmax-video').hide();
+		$('#youmax-video').hide();
 		
-		jq('#youmax').append('<div id="youmax-lightbox"><div style="width:100%; position:absolute; top:20%;"><iframe id="youmax-video-lightbox" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe></div></div>');
+		$('#youmax').append('<div id="youmax-lightbox"><div style="width:100%; position:absolute; top:20%;"><iframe id="youmax-video-lightbox" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe></div></div>');
 		
-		jq('#youmax-lightbox').hide();
+		$('#youmax-lightbox').hide();
 	},
 	
 	//get channel Id if channel URL is of the form ....../user/Adele
@@ -135,7 +135,7 @@
 		//console.log('apiUrl-'+apiUrl);
 		//showLoader();
 		
-		jq.ajax({
+		$.ajax({
 			url: apiUrl,
 			type: "GET",
 			async: true,
@@ -156,7 +156,7 @@
 		//var apiProfileURL = "http://gdata.youtube.com/feeds/api/users/"+youmaxUser+"?v=2&alt=json";
 		var apiProfileURL = "https://www.googleapis.com/youtube/v3/channels?part=brandingSettings%2Csnippet%2Cstatistics%2CcontentDetails&id="+channelId+"&key="+youmax_global_options.apiKey;
 
-		jq.ajax({
+		$.ajax({
 			url: apiProfileURL,
 			type: "GET",
 			async: true,
@@ -178,10 +178,10 @@
 	
 	showLoader = function() {
 		youmax_global_options.youmaxItemCount = 0;
-		jq('#youmax-video-list-div').empty();
-		jq('#youmax-video').hide();
-		jq('#youmax-video').attr('src','');
-		jq('#youmax-video-list-div').append('<div style="text-align:center; height:200px; font:14px Calibri;"><br><br><br><br><br><br>cargando...</div>');
+		$('#youmax-video-list-div').empty();
+		$('#youmax-video').hide();
+		$('#youmax-video').attr('src','');
+		$('#youmax-video-list-div').append('<div style="text-align:center; height:200px; font:14px Calibri;"><br><br><br><br><br><br>cargando...</div>');
 	},
 	
 	initFeaturedVideos = function () {
@@ -211,41 +211,41 @@
 		
 		
 		
-		jq('#youmax-header').append('<img id="youmax-header-logo" src="'+channelPic+'"/>'+channelName);
+		$('#youmax-header').append('<img id="youmax-header-logo" src="'+channelPic+'"/>'+channelName);
 		
-		jq('#youmax-header').append('&nbsp;&nbsp;&nbsp;&nbsp;<div class="youmax-subscribe"><div class="g-ytsubscribe" data-channelid="'+channelId+'" data-layout="default" data-count="default"></div></div>');
+		$('#youmax-header').append('&nbsp;&nbsp;&nbsp;&nbsp;<div class="youmax-subscribe"><div class="g-ytsubscribe" data-channelid="'+channelId+'" data-layout="default" data-count="default"></div></div>');
 		
-		//jq('#youmax-stat-holder').append('<div class="youmax-stat">'+channelSubscribers+'<br/> subscribers </div><div class="youmax-stat">'+channelViews+'<br/>video views</div>');
+		//$('#youmax-stat-holder').append('<div class="youmax-stat">'+channelSubscribers+'<br/> subscribers </div><div class="youmax-stat">'+channelViews+'<br/>video views</div>');
 		
-		//jq('#youmax-stat-holder').append('<div class="youmax-stat"><span class="youmax-stat-count">'+getReadableNumber(channelViews)+'</span><br/> video views </div><div class="youmax-stat"><span class="youmax-stat-count">'+getReadableNumber(channelSubscribers)+'</span><br/>subscribers</div>');
+		//$('#youmax-stat-holder').append('<div class="youmax-stat"><span class="youmax-stat-count">'+getReadableNumber(channelViews)+'</span><br/> video views </div><div class="youmax-stat"><span class="youmax-stat-count">'+getReadableNumber(channelSubscribers)+'</span><br/>subscribers</div>');
 		
-		//jq('#youmax-channel-desc').append('About '+channelName+'<br/>'+channelDesc);
+		//$('#youmax-channel-desc').append('About '+channelName+'<br/>'+channelDesc);
 		
 		renderSubscribeButton();
 		
-		jq('#youmax-tabs').find('span[id^=uploads_]').attr('id','uploads_'+channelUploadsPlaylistId);
+		$('#youmax-tabs').find('span[id^=uploads_]').attr('id','uploads_'+channelUploadsPlaylistId);
 		
 		youmaxDefaultTab = youmax_global_options.youmaxDefaultTab;
 		
 		if(typeof youmaxDefaultTab === 'undefined'||null==youmaxDefaultTab||youmaxDefaultTab==""||youmaxDefaultTab=="undefined") {
-			jq("#youmax-tabs span[id^=featured_]").click();
+			$("#youmax-tabs span[id^=featured_]").click();
 		} else if(youmaxDefaultTab.toUpperCase()=='UPLOADS'||youmaxDefaultTab.toUpperCase()=='UPLOAD') {
-			jq("#youmax-tabs span[id^=uploads_]").click();
+			$("#youmax-tabs span[id^=uploads_]").click();
 		} else if(youmaxDefaultTab.toUpperCase()=='PLAYLISTS'||youmaxDefaultTab.toUpperCase()=='PLAYLIST') {
-			jq("#youmax-tabs span[id^=playlists_]").click();
+			$("#youmax-tabs span[id^=playlists_]").click();
 		} else if(youmaxDefaultTab.toUpperCase()=='FEATURED'||youmaxDefaultTab.toUpperCase()=='FEATURED') {
-			jq("#youmax-tabs span[id^=featured_]").click();
+			$("#youmax-tabs span[id^=featured_]").click();
 		}
 		
 		
 	},
 
 	renderSubscribeButton = function() {
-		jq.ajaxSetup({
+		$.ajaxSetup({
 		  cache: true
 		});
 		
-		jq.getScript("https://apis.google.com/js/platform.js")
+		$.getScript("https://apis.google.com/js/platform.js")
 		.done(function( script, textStatus ) {
 			//alert( textStatus );
 		})
@@ -259,17 +259,17 @@
 		console.log(response);
 		
 		if(!loadMoreFlag) {
-			jq('#youmax-video-list-div').empty();
+			$('#youmax-video-list-div').empty();
 		}
 
 		var nextPageToken = response.nextPageToken;
-		var jqyoumaxLoadMoreDiv = jq('#youmax-load-more-div');
+		var $youmaxLoadMoreDiv = $('#youmax-load-more-div');
 		//console.log('nextPageToken-'+nextPageToken);
 		
 		if(null!=nextPageToken && nextPageToken!="undefined" && nextPageToken!="") {
-			jqyoumaxLoadMoreDiv.data('nextpagetoken',nextPageToken);
+			$youmaxLoadMoreDiv.data('nextpagetoken',nextPageToken);
 		} else {
-			jqyoumaxLoadMoreDiv.data('nextpagetoken','');
+			$youmaxLoadMoreDiv.data('nextpagetoken','');
 		}
 		
 		youmaxColumns = youmax_global_options.youmaxColumns;
@@ -290,38 +290,38 @@
 			playlistThumbnail = playlistArray[i].snippet.thumbnails.medium.url;
 			//playlistThumbnail = playlistThumbnail.replace("hqdefault","mqdefault");
 			if((i+youmax_global_options.youmaxItemCount-zeroPlaylistCompensation)%youmaxColumns!=0)
-				jq('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+playListId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+playlistThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+playlistThumbnail+'\')"><div class="youmax-playlist-sidebar" id="youmax-playlist-sidebar-'+playListId+'"><span class="youmax-playlist-video-count"><b>'+playlistSize+'</b><br/>VIDEOS</span></div></div><span class="youmax-video-list-title">'+playlistTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(playlistUploaded)+' ago</span></div>');
+				$('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+playListId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+playlistThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+playlistThumbnail+'\')"><div class="youmax-playlist-sidebar" id="youmax-playlist-sidebar-'+playListId+'"><span class="youmax-playlist-video-count"><b>'+playlistSize+'</b><br/>VIDEOS</span></div></div><span class="youmax-video-list-title">'+playlistTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(playlistUploaded)+' ago</span></div>');
 			else
-				jq('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%; clear:both;" id="'+playListId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+playlistThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+playlistThumbnail+'\')"><div class="youmax-playlist-sidebar" id="youmax-playlist-sidebar-'+playListId+'"><span class="youmax-playlist-video-count"><b>'+playlistSize+'</b><br/>VIDEOS</span></div></div><span class="youmax-video-list-title">'+playlistTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(playlistUploaded)+' ago</span></div>');
+				$('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%; clear:both;" id="'+playListId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+playlistThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+playlistThumbnail+'\')"><div class="youmax-playlist-sidebar" id="youmax-playlist-sidebar-'+playListId+'"><span class="youmax-playlist-video-count"><b>'+playlistSize+'</b><br/>VIDEOS</span></div></div><span class="youmax-video-list-title">'+playlistTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(playlistUploaded)+' ago</span></div>');
 				
 		}
 		
 		youmax_global_options.youmaxItemCount+=playlistArray.length-zeroPlaylistCompensation;
 			//console.log(playlistIdArray);
 			
-		jq('.youmax-video-tnail-box').click(function() {
+		$('.youmax-video-tnail-box').click(function() {
 			//alert(this.id);
 			showLoader();
-			playlistTitle = jq(this).find(".youmax-video-list-title").text();
+			playlistTitle = $(this).find(".youmax-video-list-title").text();
 			getUploads("play_"+this.id,playlistTitle);
 			//getPlaylistVideos(this.id);
 		});
 		
 		/* not sure why this is needed
-		var youmaxTnailWidth = jq('.youmax-video-tnail').css('width');
+		var youmaxTnailWidth = $('.youmax-video-tnail').css('width');
 		youmaxTnailWidth=youmaxTnailWidth.substring(0,youmaxTnailWidth.indexOf("px"));
 		var youmaxTnailHeight = youmaxTnailWidth/youtubeMqdefaultAspectRatio;
-		//jq('html > head').append('<style>.youmax-video-tnail{height:'+youmaxTnailHeight+'px;}</style>');	
-		jq('div.youmax-video-tnail').css({'height':youmaxTnailHeight+'px'});
+		//$('html > head').append('<style>.youmax-video-tnail{height:'+youmaxTnailHeight+'px;}</style>');	
+		$('div.youmax-video-tnail').css({'height':youmaxTnailHeight+'px'});
 		*/
 		
 		
 		/*
 		if(youmaxTnailHeight<130) {
 			maxTopVideos = 3;
-			jq('html > head').append('<style>.youmax-playlist-video-count{margin: 10%;margin-top: 15%;}.youmax-playlist-sidebar-video{margin: 8% auto;}</style>');	
-			//jq('div.youmax-playlist-video-count').css({'margin':'10%','margin-top':'15%'});
-			//jq('div.youmax-playlist-sidebar-video').css({'margin':'8% auto'});
+			$('html > head').append('<style>.youmax-playlist-video-count{margin: 10%;margin-top: 15%;}.youmax-playlist-sidebar-video{margin: 8% auto;}</style>');	
+			//$('div.youmax-playlist-video-count').css({'margin':'10%','margin-top':'15%'});
+			//$('div.youmax-playlist-sidebar-video').css({'margin':'8% auto'});
 		} else {
 			maxTopVideos = 4;
 		}*/
@@ -338,24 +338,24 @@
 		console.log(response);
 
 		if(!loadMoreFlag) {
-			jq('#youmax-video-list-div').empty();
+			$('#youmax-video-list-div').empty();
 			
 			if(playlistTitle) {
-				jq('.youmax-tab-hover').removeClass('youmax-tab-hover');
-				jq('#youmax-video-list-div').append('<span class="youmax-showing-title youmax-tab-hover" id="uploads_'+response.items[0].snippet.playlistId+'" style="max-width:100%;"><span class="youmax-showing">&nbsp;&nbsp;Showing playlist: </span>'+playlistTitle+'</span><br/>');
+				$('.youmax-tab-hover').removeClass('youmax-tab-hover');
+				$('#youmax-video-list-div').append('<span class="youmax-showing-title youmax-tab-hover" id="uploads_'+response.items[0].snippet.playlistId+'" style="max-width:100%;"><span class="youmax-showing">&nbsp;&nbsp;Showing playlist: </span>'+playlistTitle+'</span><br/>');
 			}
 		}
 		
 		var nextPageToken = response.nextPageToken;
-		var jqyoumaxLoadMoreDiv = jq('#youmax-load-more-div');
+		var $youmaxLoadMoreDiv = $('#youmax-load-more-div');
 		//console.log('nextPageToken-'+nextPageToken);
 		
 		youmaxColumns = youmax_global_options.youmaxColumns;
 		
 		if(null!=nextPageToken && nextPageToken!="undefined" && nextPageToken!="") {
-			jqyoumaxLoadMoreDiv.data('nextpagetoken',nextPageToken);
+			$youmaxLoadMoreDiv.data('nextpagetoken',nextPageToken);
 		} else {
-			jqyoumaxLoadMoreDiv.data('nextpagetoken','');
+			$youmaxLoadMoreDiv.data('nextpagetoken','');
 		}
 		
 		var uploadsArray = response.items;
@@ -372,36 +372,36 @@
 			
 			videoIdArray.push(videoId);
 			
-			//jq('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration">'+secondsToTime(videoDuration)+'</div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getReadableNumber(videoViewCount)+' views | '+getDateDiff(videoUploaded)+' ago</span></div>');
+			//$('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration">'+secondsToTime(videoDuration)+'</div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getReadableNumber(videoViewCount)+' views | '+getDateDiff(videoUploaded)+' ago</span></div>');
 
 								
 			if((i+youmax_global_options.youmaxItemCount)%youmaxColumns!=0)
-				jq('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration"></div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(videoUploaded)+' ago</span></div>');
+				$('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration"></div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(videoUploaded)+' ago</span></div>');
 			else
-				jq('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%; clear:both;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration"></div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(videoUploaded)+' ago</span></div>');
+				$('#youmax-video-list-div').append('<div class="youmax-video-tnail-box" style="width:'+((100/youmaxColumns)-4)+'%; clear:both;" id="'+videoId+'"><div class="youmax-video-tnail" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=\''+videoThumbnail+'\', sizingMethod=\'scale\'); background-image:url(\''+videoThumbnail+'\')"><div class="youmax-duration"></div></div><span class="youmax-video-list-title">'+videoTitle+'</span><br/><span class="youmax-video-list-views">'+getDateDiff(videoUploaded)+' ago</span></div>');
 			
 		}
 		
 		youmax_global_options.youmaxItemCount+=uploadsArray.length;
 		
-		jq('.youmax-video-tnail-box').click(function(){
+		$('.youmax-video-tnail-box').click(function(){
 			//alert(this.id);
 			//alert(showVideoInLightbox);
 			if(youmax_global_options.showVideoInLightbox){
 				showVideoLightbox(this.id);
 			} else {
-				jq('#youmax-video').attr('src','http://www.youtube.com/embed/'+this.id);
-				jq('#youmax-video').show();
-				jq('html,body').animate({scrollTop: jq("#youmax-header").offset().top},'slow');
+				$('#youmax-video').attr('src','http://www.youtube.com/embed/'+this.id);
+				$('#youmax-video').show();
+				$('html,body').animate({scrollTop: $("#youmax-header").offset().top},'slow');
 			}
 		});
 		
 		// not sure why this is needed
-		/*var youmaxTnailWidth = jq('.youmax-video-tnail').css('width');
+		/*var youmaxTnailWidth = $('.youmax-video-tnail').css('width');
 		youmaxTnailWidth=youmaxTnailWidth.substring(0,youmaxTnailWidth.indexOf("px"));
 		var youmaxTnailHeight = youmaxTnailWidth/youmax_global_options.youtubeMqdefaultAspectRatio;
-		//jq('html > head').append('<style>.youmax-video-tnail{height:'+youmaxTnailHeight+'px;}</style>');	
-		jq('div.youmax-video-tnail').css({'height':youmaxTnailHeight+'px'});*/
+		//$('html > head').append('<style>.youmax-video-tnail{height:'+youmaxTnailHeight+'px;}</style>');	
+		$('div.youmax-video-tnail').css({'height':youmaxTnailHeight+'px'});*/
 		
 
 		getVideoStats(videoIdArray);
@@ -417,7 +417,7 @@
 		//showLoader();
 		
 		apiVideoStatURL = "https://www.googleapis.com/youtube/v3/videos?part=statistics%2CcontentDetails&id="+videoIdList+"&key="+youmax_global_options.apiKey;
-		jq.ajax({
+		$.ajax({
 			url: apiVideoStatURL,
 			type: "GET",
 			async: true,
@@ -434,7 +434,7 @@
 		//console.log(response);
 		
 		var videoArray = response.items;
-		var jqvideoThumbnail;
+		var $videoThumbnail;
 
 		for(var i=0; i<videoArray.length; i++) {
 			videoId = videoArray[i].id;
@@ -445,10 +445,10 @@
 			
 			videoDuration = convertDuration(videoDuration);
 			videoDefinition = videoArray[i].contentDetails.definition.toUpperCase();
-			jqvideoThumbnail = jq('#youmax-video-list-div #'+videoId);
-			jqvideoThumbnail.find('.youmax-video-list-views').prepend(videoViewCount+' views | ');
-			jqvideoThumbnail.find('.youmax-duration').append(videoDuration);
-			//jqvideoThumbnail.append('<div class="youmax-definition">'+videoDefinition+'</div>');
+			$videoThumbnail = $('#youmax-video-list-div #'+videoId);
+			$videoThumbnail.find('.youmax-video-list-views').prepend(videoViewCount+' views | ');
+			$videoThumbnail.find('.youmax-duration').append(videoDuration);
+			//$videoThumbnail.append('<div class="youmax-definition">'+videoDefinition+'</div>');
 			
 		}
 	},
@@ -471,7 +471,7 @@
 
 		console.log('apiUploadURL-'+apiUploadURL);
 		
-		jq.ajax({
+		$.ajax({
 			url: apiUploadURL,
 			type: "GET",
 			async: true,
@@ -498,7 +498,7 @@
 		var apiChannelPlaylistsURL = "https://www.googleapis.com/youtube/v3/playlists?part=contentDetails,snippet&channelId="+youmaxChannelId+"&maxResults="+youmax_global_options.maxResults+pageTokenUrl+"&key="+youmax_global_options.apiKey;
 
 		//var apiPlaylistURL = "https://gdata.youtube.com/feeds/api/users/"+youmaxUser+"/playlists?v=2&alt=jsonc&max-results=50";	
-		jq.ajax({
+		$.ajax({
 			url: apiChannelPlaylistsURL,
 			type: "GET",
 			async: true,
@@ -511,23 +511,23 @@
 	},		
 
 	showVideoLightbox = function(videoId) {			
-		jq('#youmax-lightbox').show();
-		jq('#youmax-video-lightbox').attr('src','http://www.youtube.com/embed/'+videoId);
+		$('#youmax-lightbox').show();
+		$('#youmax-video-lightbox').attr('src','http://www.youtube.com/embed/'+videoId);
 		
-		jq('#youmax-lightbox').click(function(){
-			jq('#youmax-video-lightbox').attr('src','');
-			jq('#youmax-lightbox').hide();
+		$('#youmax-lightbox').click(function(){
+			$('#youmax-video-lightbox').attr('src','');
+			$('#youmax-lightbox').hide();
 		});
 	},
 		
 	resetLoadMoreButton = function() {
-		var jqyoumaxLoadMoreDiv = jq('#youmax-load-more-div');
-		jqyoumaxLoadMoreDiv.removeClass('youmax-load-more-div-click');
-		jqyoumaxLoadMoreDiv.text('CARGAR MÁS');
+		var $youmaxLoadMoreDiv = $('#youmax-load-more-div');
+		$youmaxLoadMoreDiv.removeClass('youmax-load-more-div-click');
+		$youmaxLoadMoreDiv.text('CARGAR MÁS');
 	},
 	
 	prepareYoumax = function() {
-		jq('#youmax').empty();
+		$('#youmax').empty();
 		/*
 		if(youTubeChannelURL.indexOf("youtube.com/user/")!=-1) {
 			if(null!=youTubeChannelURL&&youTubeChannelURL.indexOf("?feature")!=-1)
@@ -546,16 +546,16 @@
 		loadYoumax();
 		showLoader();
 		
-		jq('.youmax-tab').click(function(){
-			jq('.youmax-tab-hover').removeClass('youmax-tab-hover');
-			jq(this).addClass('youmax-tab-hover');
-			//jq('.youmax-tab').css('color','#666');
-			//jq('.youmax-tab').css('background-color','rgb(230,230,230)');
-			//jq('.youmax-tab').css('text-shadow','0 1px 0 #fff');
+		$('.youmax-tab').click(function(){
+			$('.youmax-tab-hover').removeClass('youmax-tab-hover');
+			$(this).addClass('youmax-tab-hover');
+			//$('.youmax-tab').css('color','#666');
+			//$('.youmax-tab').css('background-color','rgb(230,230,230)');
+			//$('.youmax-tab').css('text-shadow','0 1px 0 #fff');
 
-			//jq(this).css('color','#eee');
-			//jq(this).css('background-color','#999');
-			//jq(this).css('text-shadow','0 0');
+			//$(this).css('color','#eee');
+			//$(this).css('background-color','#999');
+			//$(this).css('text-shadow','0 0');
 			
 			youmaxTabId = this.id;
 			
@@ -570,14 +570,14 @@
 			}
 		});
 		
-		jq('#youmax-load-more-div').click(function(){
+		$('#youmax-load-more-div').click(function(){
 
-			var jqyoumaxLoadMoreDiv = jq('#youmax-load-more-div');
-			jqyoumaxLoadMoreDiv.html('LOADING..');
-			jqyoumaxLoadMoreDiv.addClass('youmax-load-more-div-click');
+			var $youmaxLoadMoreDiv = $('#youmax-load-more-div');
+			$youmaxLoadMoreDiv.html('LOADING..');
+			$youmaxLoadMoreDiv.addClass('youmax-load-more-div-click');
 			
-			var youmaxTabId = jq('.youmax-tab-hover').attr('id');
-			var nextPageToken = jqyoumaxLoadMoreDiv.data('nextpagetoken');
+			var youmaxTabId = $('.youmax-tab-hover').attr('id');
+			var nextPageToken = $youmaxLoadMoreDiv.data('nextpagetoken');
 			console.log('load more clicked : nextPageToken-'+nextPageToken);
 			
 			if(null!=nextPageToken && nextPageToken!="undefined" && nextPageToken!="") {
@@ -589,7 +589,7 @@
 					getPlaylists(nextPageToken);
 				}
 			} else {
-				jqyoumaxLoadMoreDiv.html('NO HAY MÁS');
+				$youmaxLoadMoreDiv.html('NO HAY MÁS');
 			}
 
 		});		
@@ -621,7 +621,7 @@
 	}		
 	
 	
-	jq.fn.youmax = function(options) {
+	$.fn.youmax = function(options) {
 
 		
 		//set local options

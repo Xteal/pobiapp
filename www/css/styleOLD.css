@@ -157,18 +157,18 @@ body {
 	margin:0px;
 	color:#454546;
 }
-[data-role="header"]{
+header {
 	background:#FFF;
 	position:fixed;
 	width:100%;
 	z-index:3;
 	border-bottom:2px solid #C3D84B;
 }
-[data-role="page"]{
-	margin:auto!important;
-	width:100%!important;
-	position:absolute!important;
-	top:60px!important;
+#container {
+	margin:auto;
+	width:100%;
+	position:absolute;
+	top:60px;
 	z-index:1;
 }
 #pagina {

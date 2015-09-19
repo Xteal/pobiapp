@@ -8,19 +8,21 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css"> 
 		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css"> 
 		<script language="javascript" src="js/jquery.js"></script>
-		<script>var jq = jQuery.noConflict();</script>
 		<script language="javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script language="javascript" src="js/script.js"></script>	
 		
 	</head>
 	<body onload="onLoad()">
-		<div data-role="header">
+		<header>
 			<div class="back-to-menu"><i class="icon-undo"></i></div>
 			<div class="button-update"><i class="icon-spinner"></i></div>
 			<div align="center"><img src="img/logo.jpg" style="max-width:170px" /></div>
 			
+		</header>
+		<div id="pagina">
+			<div id="pagina-container"></div>
 		</div>
-		<div data-role="page" id="menu">
+		<div id="container">
 			<nav>
 				<ul>
 					<li data-accion="open-page" id="bienvenido"><i class="icon-home big"></i><br>Bienvenido</li>
