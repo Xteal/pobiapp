@@ -4,7 +4,7 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
 	nav ul>li {
 		margin:0.6%;
-		width:44%;
+		width:48.5%;
 		height:120px;
 		font-size:15px;
 	}
@@ -18,7 +18,7 @@ and (max-device-width : 480px) {
 and (min-width : 321px) {
 	nav ul>li {
 		margin:0.6%;
-		width:44%;
+		width:48.5%;
 		height:120px;
 		font-size:20px;
 	}
@@ -30,9 +30,12 @@ and (min-width : 321px) {
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
+	nav ul {
+		margin:30px;
+	}
 	nav ul>li {
 		margin:0.6%;
-		width:44%;
+		width:40.5%;
 		height:120px;
 		font-size:15px;
 	}
@@ -157,7 +160,7 @@ body {
 	margin:0px;
 	color:#454546;
 }
-[data-role="header"]{
+[data-role="navbar"]{
 	background:#FFF;
 	position:fixed;
 	width:100%;
