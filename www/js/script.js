@@ -1,3 +1,4 @@
+
 $(function() {
 	$.mobile.loading( "hide" );
 	$(".back-to-menu").on("tap", function() {
@@ -30,10 +31,13 @@ $(function() {
 function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
+
 function onDeviceReady() {
-	document.addEventListener("backbutton", handleBackButton, true);
+	document.addEventListener("backbutton", onBackKeyDown, false);
 }
-function handleBackButton(){
+
+function onBackKeyDown() {
+	alert("hola");
 	navigator.app.backHistory();
 }
 
