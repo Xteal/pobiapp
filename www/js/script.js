@@ -1,5 +1,6 @@
 
-jq(function() {
+jq(function() {	
+	jq("div[data-role=header]").toolbar({ position: "fixed" });
 	jq( window ).on( "pagebeforeshow", function( event, data ) {
 		if(jq.mobile.activePage.attr('id') == 'menu'){
 			jq(".back-to-menu i").hide();
@@ -9,6 +10,8 @@ jq(function() {
 			jq(".button-update i").show();
 		if(jq.mobile.activePage.attr('id') != 'menu')
 			jq(".back-to-menu i").show();
+		
+		jq.mobile.resetActivePageHeight();
 	});	
 	jq.mobile.loading( "hide" );
 	jq(".back-to-menu").on("tap", function() {
@@ -17,6 +20,7 @@ jq(function() {
 		jq(".back-to-menu i").hide();
 		jq(".button-update i").hide();
 		jq.mobile.navigate( "#menu");
+		jq.mobile.resetActivePageHeight();
 	});
 	
 	jq("nav li").on("tap",function(event) {
@@ -69,4 +73,5 @@ function cargarPagina(pagina) {
 	}else {
 		jq.mobile.navigate( "#"+pagina );
 	}	
+	jq.mobile.resetActivePageHeight();
 }

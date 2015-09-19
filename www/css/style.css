@@ -160,9 +160,8 @@ body {
 	margin:0px;
 	color:#454546;
 }
-[data-role="navbar"]{
+[data-role="header"]{
 	background:#FFF;
-	position:fixed;
 	width:100%;
 	z-index:3;
 	margin:0px!important;
@@ -172,7 +171,6 @@ body {
 	margin:auto!important;
 	width:100%!important;
 	position:absolute!important;
-	top:60px!important;
 	z-index:1;
 }
 #pagina {
