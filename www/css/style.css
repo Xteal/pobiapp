@@ -162,9 +162,7 @@ body {
 }
 [data-role="header"]{
 	background:#FFF;
-	width:100%;
 	z-index:3;
-	margin:0px!important;
 	border-bottom:2px solid #C3D84B;
 }
 [data-role="page"]{
@@ -222,7 +220,8 @@ nav ul>li>a {
 	color:#333;
 	font-size:33px;
 	padding:12px;
-	cursor:pointer
+	cursor:pointer;
+	margin-top:-59px;
 }
 .back-to-menu i {
 	display:none;
@@ -244,6 +243,7 @@ nav ul>li>a {
 	padding:12px;
 	cursor:pointer;
 	margin-right:26px;
+	margin-top:-59px;
 }
 .button-update i {
 	display:none;

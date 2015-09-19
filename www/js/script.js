@@ -68,10 +68,13 @@ function cargarPagina(pagina) {
 			jq(".back-to-menu i").show();
 			if(pagina=="facebook")
 				jq(".button-update i").show();
-			jq.mobile.navigate( "#"+pagina );
+			jq.mobile.navigate( "#"+pagina, function() {
+				jq.mobile.resetActivePageHeight();
+			});
 		});
 	}else {
-		jq.mobile.navigate( "#"+pagina );
+		jq.mobile.navigate( "#"+pagina, function() {
+				jq.mobile.resetActivePageHeight();
+		});
 	}	
-	jq.mobile.resetActivePageHeight();
 }
