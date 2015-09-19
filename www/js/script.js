@@ -65,9 +65,6 @@ function cargarPagina(pagina) {
 			if(pagina=="facebook")
 				jq(".button-update i").show();
 			jq.mobile.navigate( "#"+pagina );
-			jq("html, body").animate({
-				scrollTop:0
-			},"slow");
 		});
 	}else {
 		jq.mobile.navigate( "#"+pagina );
