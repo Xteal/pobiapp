@@ -42,7 +42,8 @@ function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);  
 }
 
-function onDeviceReady() {  
+function onDeviceReady() { 
+	jq.mobile.resetActivePageHeight();
 	document.addEventListener("backbutton", onBackKeyDown, false); 
 }
 	
