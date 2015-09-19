@@ -2,7 +2,6 @@ $(function() {
 	$.mobile.loading( "hide" );
 	$(".back-to-menu").on("tap", function() {
 		var hashAntiguo = window.location.hash;
-		alert(hashAntiguo);
 		window.location.hash = '';
 		$("#pagina").hide();
 		$(".back-to-menu i").hide();
@@ -28,15 +27,14 @@ $(function() {
 	});
 });
 
-function init() {
+function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
-} 
-function onDeviceReady(){
-	document.addEventListener("backbutton", backKeyDown, true);
-	alert("ey");
 }
-function backKeyDown() { 
-	window.history.back();
+function onDeviceReady() {
+	document.addEventListener("backbutton", handleBackButton, true);
+}
+function handleBackButton(){
+	navigator.app.backHistory();
 }
 
 function cargarPagina(pagina) {

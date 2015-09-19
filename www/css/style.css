@@ -1,41 +1,153 @@
-@media (max-width: 200px){
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
 	nav ul>li {
 		margin:0.6%;
 		width:48.5%;
 		height:120px;
-		font-size:20px!important;
+		font-size:15px;
+	}
+	.big {
+		font-size:35px;
 	}
 }
-@media (max-width: 300px){
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
 	nav ul>li {
 		margin:0.6%;
 		width:48.5%;
 		height:120px;
-		font-size:20px!important;
+		font-size:20px;
+	}
+	.big {
+		font-size:70px;
 	}
 }
-@media (max-width: 320px){
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
 	nav ul>li {
 		margin:0.6%;
 		width:48.5%;
 		height:120px;
-		font-size:20px!important;
+		font-size:15px;
+	}
+	.big {
+		font-size:35px;
 	}
 }
-@media (max-width: 600px){
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
 	nav ul>li {
-		margin:0.6%;
-		width:48.5%;
+		margin:1%;
+		width:30.5%;
 		height:120px;
+		font-size:20px;
 	}
 }
-@media (min-width: 600px) and (orientation: landscape) {
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+	nav ul>li {
+		margin:1%;
+		width:30.5%;
+		height:120px;
+		font-size:20px;
+	}
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+	nav ul>li {
+		margin:1%;
+		width:30.5%;
+		height:120px;
+		font-size:20px;
+	}
+	.big {
+		font-size:70px;
+	}
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+	nav ul>li {
+		margin:1%;
+		width:30.5%;
+		height:120px;
+		font-size:20px;
+	}
+	.big {
+		font-size:70px;
+	}
+}
+
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
 	nav ul>li {
 		margin:1%;
 		width:30.5%;
 		height:120px;
 	}
+	.big {
+		font-size:70px;
+	}
 }
+ 
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+	nav ul>li {
+		margin:0.6%;
+		width:48.5%;
+		height:120px;
+		font-size:20px;
+	}
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+	nav ul>li {
+		margin:0.6%;
+		width:48.5%;
+		height:120px;
+		font-size:20px;
+	}
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	nav ul>li {
+		margin:0.6%;
+		width:48.5%;
+		height:120px;
+		font-size:20px;
+	}
+}
+
 * {
   /* So 100% means 100% */
   box-sizing: border-box;
@@ -68,10 +180,16 @@ header {
 	display:none;
 	top:60px;
 	padding:10px;
+	overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 #pagina-container {
 	width:90%;
 	margin:auto;
+	
+}
+nav {
+	width:100%;
 }
 nav ul, nav ul>li {
 	display:inline;
@@ -95,9 +213,6 @@ nav ul>li>a {
 }
 .clear {
 	clear:both;
-}
-.big {
-	font-size:70px;
 }
 .back-to-menu {
 	width:35px;
