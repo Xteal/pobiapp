@@ -183,7 +183,7 @@ body {
 	overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
-#pagina-container {
+.container {
 	width:90%;
 	margin:auto;
 	
@@ -194,18 +194,17 @@ nav {
 nav ul, nav ul>li {
 	display:inline;
 }
-nav ul>li {
+[data-accion="open-page"], [data-accion="open-link"] {
 	color:#61C9D4;
 	cursor:pointer;
 	vertical-align:middle;
 	padding:10px;
-	float:left;
 	/*background:rgba(255,255,255,0.6);
 	border:1px solid rgba(0,0,0,0.4);
 	box-shadow:1px 1px 7px rgba(0,0,0,0.3);*/
 	text-align:center;
 }
-nav ul>li>a {
+[data-accion="open-page"] >a, [data-accion="open-link"] >a {
 	color:white;
 	font-weight:bold;
 	text-transform: uppercase;

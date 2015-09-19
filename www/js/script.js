@@ -23,9 +23,9 @@ jq(function() {
 		jq.mobile.resetActivePageHeight();
 	});
 	
-	jq("nav li").on("tap",function(event) {
+	jq("[data-accion=open-page],[data-accion=open-link]").on("tap",function(event) {
 		event.preventDefault();
-		var id= jq(this).attr("id");
+		var id= jq(this).data("id");
 		var accion = jq(this).data("accion");
 		switch(accion){
 			case "open-page":
