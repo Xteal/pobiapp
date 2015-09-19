@@ -7,20 +7,16 @@ jq(function() {
 		}
 		if(jq.mobile.activePage.attr('id') == 'facebook')
 			jq(".button-update i").show();
-		if(jq.mobile.activePage.attr('id') != 'menu' && jq.mobile.activePage.attr('id') != 'facebook')
+		if(jq.mobile.activePage.attr('id') != 'menu')
 			jq(".back-to-menu i").show();
 	});	
 	jq.mobile.loading( "hide" );
 	jq(".back-to-menu").on("tap", function() {
 		var hashAntiguo = window.location.hash;
 		window.location.hash = '';
-		jq("#pagina").hide();
 		jq(".back-to-menu i").hide();
 		jq(".button-update i").hide();
-		jq("nav").show();
-		jq('html, body').animate({
-			scrollTop: jq(""+hashAntiguo).offset().top
-		}, 2000);
+		jq.mobile.navigate( "#menu");
 	});
 	
 	jq("nav li").on("tap",function(event) {

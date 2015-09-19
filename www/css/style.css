@@ -4,7 +4,7 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
 	nav ul>li {
 		margin:0.6%;
-		width:48.5%;
+		width:44%;
 		height:120px;
 		font-size:15px;
 	}
@@ -18,7 +18,7 @@ and (max-device-width : 480px) {
 and (min-width : 321px) {
 	nav ul>li {
 		margin:0.6%;
-		width:48.5%;
+		width:44%;
 		height:120px;
 		font-size:20px;
 	}
@@ -32,7 +32,7 @@ and (min-width : 321px) {
 and (max-width : 320px) {
 	nav ul>li {
 		margin:0.6%;
-		width:48.5%;
+		width:44%;
 		height:120px;
 		font-size:15px;
 	}
@@ -162,6 +162,7 @@ body {
 	position:fixed;
 	width:100%;
 	z-index:3;
+	margin:0px!important;
 	border-bottom:2px solid #C3D84B;
 }
 [data-role="page"]{
@@ -218,7 +219,7 @@ nav ul>li>a {
 	width:35px;
 	float:left;
 	color:#333;
-	font-size:36px;
+	font-size:33px;
 	padding:12px;
 	cursor:pointer
 }
@@ -238,7 +239,7 @@ nav ul>li>a {
 	width:35px;
 	float:right;
 	color:#333;
-	font-size:36px;
+	font-size:33px;
 	padding:12px;
 	cursor:pointer;
 	margin-right:26px;
