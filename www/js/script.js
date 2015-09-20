@@ -39,11 +39,11 @@ jq(function() {
 });
 
 function onLoad() {
+	jq.mobile.resetActivePageHeight();
 	document.addEventListener("deviceready", onDeviceReady, false);  
 }
 
 function onDeviceReady() { 
-	jq.mobile.resetActivePageHeight();
 	document.addEventListener("backbutton", onBackKeyDown, false); 
 }
 	

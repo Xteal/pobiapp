@@ -120,7 +120,7 @@
 		jq('#youmax').append('<div id="youmax-tabs"><span id="featured_" class="youmax-tab">Featured</span><span id="uploads_" class="youmax-tab">Uploads</span><span id="playlists_" class="youmax-tab">Playlists</span></div>');
 
 		
-		jq('#youmax').append('<div id="youmax-encloser"><iframe id="youmax-video" width="'+(youmaxWidgetWidth-2)+'" height="'+(youmaxWidgetWidth/youmax_global_options.youtubeVideoAspectRatio)+'" src="" frameborder="0" allowfullscreen></iframe><div id="youmax-video-list-div"></div><div id="youmax-load-more-div">VER MÁS</div></div>');
+		jq('#youmax').append('<div id="youmax-encloser"><iframe id="youmax-video" width="'+(youmaxWidgetWidth-2)+'%" height="'+(youmaxWidgetWidth/youmax_global_options.youtubeVideoAspectRatio)+'%" src="" frameborder="0" allowfullscreen></iframe><div id="youmax-video-list-div"></div><div id="youmax-load-more-div">VER MÁS</div></div>');
 		
 		jq('#youmax-video').hide();
 		
@@ -510,7 +510,8 @@
 		});
 	},		
 
-	showVideoLightbox = function(videoId) {			
+	showVideoLightbox = function(videoId) {		
+
 		jq('#youmax-lightbox').show();
 		jq('#youmax-video-lightbox').attr('src','http://www.youtube.com/embed/'+videoId);
 		
