@@ -1,4 +1,3 @@
-
 jq(function() {	
 	jq("div[data-role=header]").toolbar({ position: "fixed" });
 	jq( window ).on( "pagebeforeshow", function( event, data ) {
@@ -61,6 +60,7 @@ function onBackKeyDown() {
 }
 
 function cargarPagina(pagina) {
+	jq.mobile.loading( "show" );
 	if(jq("div[id='"+pagina+"']").length==0) {
 		var jqdiv = jq("<div>", {id: pagina, "data-role": "page"});
 		jq("body").append(jqdiv);
@@ -70,12 +70,14 @@ function cargarPagina(pagina) {
 			if(pagina=="facebook")
 				jq(".button-update i").show();
 			jq.mobile.navigate( "#"+pagina, function() {
+				jq.mobile.loading( "hide" );
 				jq.mobile.resetActivePageHeight();
 			});
 		});
 	}else {
 		jq.mobile.navigate( "#"+pagina, function() {
-				jq.mobile.resetActivePageHeight();
+			jq.mobile.loading( "hide" );
+			jq.mobile.resetActivePageHeight();
 		});
 	}	
 }

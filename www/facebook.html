@@ -7,15 +7,14 @@
 		</div>
 	</div>
 </section>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/codebird-js/codebird.js"></script>
 <script src="bower_components/doT/doT.min.js"></script>
 <script src="bower_components/moment/min/moment.min.js"></script>
 <script src="js/jquery.socialfeed.js"></script>
 <script>
-    $(document).ready(function(){
+    jq(function(){
 		var updateFeed = function() {
-            $('.social-feed-container').socialfeed({
+            jq('.social-feed-container').socialfeed({
                     // FACEBOOK
                     facebook:{
                         accounts: ['@120120798061204','!120120798061204'],
@@ -33,7 +32,7 @@
                     // When all the posts are collected and displayed - this function is evoked
                     callback: function(){
 						var interval = setInterval(function(){
-							$.mobile.loading('hide');
+							jq.mobile.loading('hide');
 							clearInterval(interval);
 						},1);  
                         console.log('all posts are collected');
@@ -42,7 +41,7 @@
         };
 		
 		updateFeed();
-		$('.button-update').click(function() {
+		jq('.button-update').click(function() {
             updateFeed();
         });
 				
