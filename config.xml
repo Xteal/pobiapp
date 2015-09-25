@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.rajobos.rajobosAPP" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Rappjobos</name>
+    <name>AETCB</name>
     <description>
-        Disfruta de los mejores remix desde cualquier lugar del mundo
     </description>
     <author email="info@krovira.com" href="http://krovira.com">
         Kevin Rovira
