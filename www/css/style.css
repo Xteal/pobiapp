@@ -163,6 +163,7 @@ body {
 [data-role="header"]{
 	background:#FFF;
 	z-index:3;
+	padding:1px;
 	border-bottom:2px solid #C3D84B;
 }
 [data-role="page"]{
